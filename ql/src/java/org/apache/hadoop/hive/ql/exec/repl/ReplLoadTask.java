@@ -112,7 +112,7 @@ public class ReplLoadTask extends Task<ReplLoadWork> implements Serializable {
 
   private int executeBootStrapLoad() {
     try {
-      int maxTasks = conf.getIntVar(HiveConf.ConfVars.REPL_APPROX_MAX_LOAD_TASKS);
+      int maxTasks = 4;
       Context loadContext = new Context(work.dumpDirectory, conf, getHive(),
               work.sessionStateLineageState, context);
       TaskTracker loadTaskTracker = new TaskTracker(maxTasks);
